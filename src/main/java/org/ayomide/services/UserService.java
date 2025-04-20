@@ -1,6 +1,9 @@
 package org.ayomide.services;
 
+import org.ayomide.controller.dto.request.RegisterUserDto;
+import org.ayomide.controller.dto.request.RegisterUserRequest;
 import org.ayomide.controller.dto.request.UserDtoRequest;
+import org.ayomide.controller.dto.response.RegisterUserResponse;
 import org.ayomide.controller.dto.response.UserDtoResponse;
 import org.ayomide.data.model.User;
 import org.ayomide.data.repository.UserRepository;
@@ -15,8 +18,10 @@ public class UserService implements UserServiceInterface{
     private UserRepository userRepository;
 
     @Override
-    public UserDtoResponse createUser(UserDtoRequest userDtoRequest) {
-        return userRepository.save(userDtoRequest);
+    public RegisterUserResponse createUser(RegisterUserRequest userDtoRequest) {
+        User user = new User();
+        user.setUserName(userDtoRequest.getUserName());
+        user.setEmail();
     }
 
     @Override

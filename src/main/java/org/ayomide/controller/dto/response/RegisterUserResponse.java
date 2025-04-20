@@ -6,7 +6,7 @@ import org.springframework.data.annotation.Id;
 
 @Getter
 @Setter
-public class UserDtoResponse {
+public class RegisterUserResponse {
     @Id
     private String id;
     private String userName;

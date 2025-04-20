@@ -5,6 +5,7 @@ import org.ayomide.controller.dto.response.AuctionDtoResponse;
 import org.ayomide.data.model.Auction;
 import org.ayomide.services.AuctionServiceInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,19 +18,8 @@ public class AuctionController {
   private AuctionServiceInterface auctionServiceInterface;
 
   @PostMapping
-    public AuctionDtoResponse createAuction(AuctionDtoRequest auctionDtoRequest){
-      AuctionDtoRequest auction = new AuctionDtoRequest();
-      auction.setItem(auctionDtoRequest.getItem());
-      auction.setStartBid(auctionDtoRequest.getStartBid());
-      auction.setCurrentBid(auctionDtoRequest.getCurrentBid());
-      auction.setStartDate(auctionDtoRequest.getStartDate());
-      auction.setEndDate(auctionDtoRequest.getEndDate());
-    AuctionDtoResponse createAuction = auctionServiceInterface.createAuction(auction);
+    public ResponseEntity<?> createAuction(AuctionDtoRequest auctionDtoRequest){
 
-      AuctionDtoResponse auctionDtoResponse = new AuctionDtoResponse();
-      auctionDtoResponse.setItem(createAuction.getItem());
-      auctionDtoResponse.setStartBid(createAuction.getStartBid());
-      auctionDtoResponse.setCurrentBid(createAuction.getCurrentBid());
-    return auctionDtoResponse;
+
   }
 }
