@@ -1,4 +1,6 @@
-package org.ayomide.dto.request;
+package org.ayomide.controller.dto.request;
 
-public class UserDtoRequest {
+import org.ayomide.data.model.User;
+
+public class UserDtoRequest extends User {
 }

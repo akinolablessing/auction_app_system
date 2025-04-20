@@ -1,4 +1,31 @@
 package org.ayomide.services;
 
-public class UserService {
+import org.ayomide.controller.dto.request.UserDtoRequest;
+import org.ayomide.controller.dto.response.UserDtoResponse;
+import org.ayomide.data.model.User;
+import org.ayomide.data.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class UserService implements UserServiceInterface{
+    @Autowired
+    private UserRepository userRepository;
+
+    @Override
+    public UserDtoResponse createUser(UserDtoRequest userDtoRequest) {
+        return userRepository.save(userDtoRequest);
+    }
+
+    @Override
+    public void deleteUser(User user) {
+        userRepository.delete(user);
+    }
+
+    @Override
+    public List<User> findAllUser() {
+        return userRepository.findAll();
+    }
 }
