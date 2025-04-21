@@ -8,5 +8,5 @@ import lombok.Setter;
 public class ItemDtoRequest {
     private String name;
     private String description;
-
+    private double amount;
 }

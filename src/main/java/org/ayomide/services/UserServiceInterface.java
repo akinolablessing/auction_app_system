@@ -13,5 +13,6 @@ public interface UserServiceInterface {
 
     RegisterUserResponse createUser(RegisterUserRequest userDtoRequest);
     LoginUserResponse userLogin(LoginUserRequest loginUserRequest);
-    List<User> findAllUser();
+//    List<User> findAllUser();
+    void leaveFeedBack();
 }

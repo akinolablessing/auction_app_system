@@ -1,6 +1,7 @@
 package org.ayomide.services;
 
 import org.ayomide.controller.dto.request.ItemDtoRequest;
+import org.ayomide.controller.dto.response.ItemDtoResponse;
 import org.ayomide.data.model.Item;
 import org.ayomide.data.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,13 +14,20 @@ public class ItemService implements ItemServiceInterface{
     private ItemRepository itemRepository;
 
     @Override
-    public Item createItem(Item item) {
-        return itemRepository.save(item);
+    public ItemDtoResponse createItem(ItemDtoRequest itemDtoRequest) {
+        ItemDtoResponse itemDtoResponse = new ItemDtoResponse();
+        Item item = new Item();
+        item.setName(itemDtoRequest.getName());
+        item.setDescription(itemDtoRequest.getDescription());
+        item.setAmount(itemDtoRequest.getAmount());
+        itemRepository.save(item);
+        itemDtoResponse.setMessage("Item Created Successful");
+        return itemDtoResponse;
     }
 
     @Override
-    public void deleteItem(Item item) {
-        itemRepository.delete(item);
+    public void deleteItem(ItemDtoRequest itemDtoRequest) {
+//        itemRepository.delete(item);
     }
 
     @Override

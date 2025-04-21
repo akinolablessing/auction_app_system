@@ -16,7 +16,6 @@ import java.util.List;
 
 import static org.ayomide.validation.Validation.validateGmail;
 
-//import static org.ayomide.validation.Validation.validateGmail;
 
 @Service
 public class UserService implements UserServiceInterface{
@@ -53,12 +52,13 @@ public class UserService implements UserServiceInterface{
     }
 
     @Override
-    public void deleteUser(User user) {
-        userRepository.delete(user);
+    public void leaveFeedBack() {
+
     }
 
-    @Override
-    public List<User> findAllUser() {
-        return userRepository.findAll();
-    }
+
+//    @Override
+//    public List<User> findAllUser() {
+//        return userRepository.findAll();
+//    }
 }

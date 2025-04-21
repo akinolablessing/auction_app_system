@@ -8,8 +8,6 @@ import org.springframework.data.annotation.Id;
 @Getter
 public class ItemDtoResponse {
     @Id
-    private String itemId;
-    private String name;
-    private String description;
-    private double amount;
+    private String message;
+
 }
