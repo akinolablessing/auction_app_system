@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.index.Indexed;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document
@@ -14,6 +15,8 @@ public class User {
     private String id;
     private String userName;
     private String password;
+    @Indexed(unique = true)
     private String email;
+    private boolean isLogin;
 
 }

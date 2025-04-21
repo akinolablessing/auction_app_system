@@ -16,10 +16,10 @@ public class AuctionController {
 
   @Autowired
   private AuctionServiceInterface auctionServiceInterface;
-
-  @PostMapping
-    public ResponseEntity<?> createAuction(AuctionDtoRequest auctionDtoRequest){
-
-
-  }
+//
+//  @PostMapping
+//    public ResponseEntity<?> createAuction(AuctionDtoRequest auctionDtoRequest){
+//
+//
+//  }
 }

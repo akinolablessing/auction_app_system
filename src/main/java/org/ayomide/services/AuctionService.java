@@ -17,7 +17,8 @@ public class AuctionService implements AuctionServiceInterface {
 
     @Override
     public AuctionDtoResponse createAuction(AuctionDtoRequest auctionDtoRequest) {
-       return auctionRepository.save(auction);
+//       return auctionRepository.save(auction);
+        return null;
     }
 
     @Override
