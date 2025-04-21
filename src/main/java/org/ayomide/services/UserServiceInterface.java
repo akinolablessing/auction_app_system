@@ -13,6 +13,5 @@ public interface UserServiceInterface {
 
     RegisterUserResponse createUser(RegisterUserRequest userDtoRequest);
     LoginUserResponse userLogin(LoginUserRequest loginUserRequest);
-    void deleteUser(User user);
     List<User> findAllUser();
 }

@@ -16,6 +16,8 @@ import java.util.List;
 
 import static org.ayomide.validation.Validation.validateGmail;
 
+//import static org.ayomide.validation.Validation.validateGmail;
+
 @Service
 public class UserService implements UserServiceInterface{
     @Autowired
