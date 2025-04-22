@@ -26,9 +26,9 @@ public class UserServiceTest {
     }
     public RegisterUserRequest registerUser(){
         RegisterUserRequest request = new RegisterUserRequest();
-        request.setUserName("akabs");
-        request.setEmail("akabs@gmail.com");
-        request.setPassword("chris123");
+        request.setUserName("daniel");
+        request.setEmail("daniel@gmail.com");
+        request.setPassword("daniel123");
         return  request;
     }
     @Test
@@ -63,8 +63,8 @@ public void testThatLoginUser(){
 }
 public LoginUserRequest loginUser(){
         LoginUserRequest request = new LoginUserRequest();
-        request.setEmail("akabs@gmail.com");
-        request.setPassword("chris123");
+        request.setEmail("daniel@gmail.com");
+        request.setPassword("daniel123");
         return request;
 }
 }
