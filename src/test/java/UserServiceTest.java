@@ -1,6 +1,8 @@
 import org.ayomide.Main;
+import org.ayomide.controller.dto.request.LeaveFeedBackRequest;
 import org.ayomide.controller.dto.request.LoginUserRequest;
 import org.ayomide.controller.dto.request.RegisterUserRequest;
+import org.ayomide.controller.dto.response.LeaveFeedBackResponse;
 import org.ayomide.controller.dto.response.LoginUserResponse;
 import org.ayomide.controller.dto.response.RegisterUserResponse;
 import org.ayomide.services.UserService;
@@ -66,5 +68,17 @@ public LoginUserRequest loginUser(){
         request.setEmail("daniel@gmail.com");
         request.setPassword("daniel123");
         return request;
+}
+@Test
+public void testThatUserGiveFeedBack(){
+     LeaveFeedBackRequest leaveFeedBackRequest = userFeedBack();
+            LeaveFeedBackResponse leaveFeedBackResponse = userService.leaveFeedBack(leaveFeedBackRequest);
+            assertEquals("Thanks for the feedback dear customer!!",leaveFeedBackResponse.getMessage());
+
+}
+public LeaveFeedBackRequest userFeedBack(){
+        LeaveFeedBackRequest request = new LeaveFeedBackRequest();
+        request.setMessage("Your auction app was so fun and nice with 100% trust ");
+    return request;
 }
 }
