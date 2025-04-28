@@ -18,7 +18,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static org.ayomide.validation.Validation.validateGmail;
+import static org.ayomide.validation.Validation.*;
 
 
 @Service
@@ -33,9 +33,11 @@ public class UserService implements UserServiceInterface{
     public RegisterUserResponse createUser(RegisterUserRequest userDtoRequest) {
         RegisterUserResponse response = new RegisterUserResponse();
         User user = new User();
+        validateUserName(userDtoRequest);
         user.setUserName(userDtoRequest.getUserName());
         validateGmail(userDtoRequest);
         user.setEmail(userDtoRequest.getEmail());
+        validateUserPassword(userDtoRequest);
         user.setPassword(userDtoRequest.getPassword());
         userRepository.save(user);
         response.setMessage("User Register Successfully");
