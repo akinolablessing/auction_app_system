@@ -10,4 +10,5 @@ public interface AuctionServiceInterface {
      AuctionDtoResponse createAuction(AuctionDtoRequest auctionDtoRequest);
      void deleteAuction(AuctionDtoRequest auctionDtoRequest);
     List<Auction> getAllAuction();
+
 }

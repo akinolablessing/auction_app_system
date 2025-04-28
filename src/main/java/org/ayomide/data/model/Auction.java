@@ -13,7 +13,7 @@ public class Auction {
     @Id
     private  String autionId;
     private Item item;
-    private Long startBid;
+    private double startBid;
     private LocalDateTime startDate;
     private LocalDateTime endDate;
 

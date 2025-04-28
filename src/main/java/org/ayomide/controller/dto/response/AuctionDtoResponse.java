@@ -8,10 +8,5 @@ import java.time.LocalDateTime;
 @Setter
 @Getter
 public class AuctionDtoResponse {
-    private Item item;
-    private int startBid;
-    private int currentBid;
-    private LocalDateTime startDate;
-    private LocalDateTime endDate;
-
+    private String message;
 }

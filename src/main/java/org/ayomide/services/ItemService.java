@@ -8,10 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
+
 @Service
-public class ItemService implements ItemServiceInterface{
+public class ItemService implements ItemServiceInterface {
     @Autowired
     private ItemRepository itemRepository;
+
 
     @Override
     public ItemDtoResponse createItem(ItemDtoRequest itemDtoRequest) {
@@ -33,5 +36,11 @@ public class ItemService implements ItemServiceInterface{
     @Override
     public List<Item> getAllItems() {
         return itemRepository.findAll();
+    }
+
+    @Override
+    public Optional<Item> findById(String itemId) {
+        Optional<Item> optional = itemRepository.findById(itemId);
+        return optional;
     }
 }

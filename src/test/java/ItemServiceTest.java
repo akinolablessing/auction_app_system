@@ -25,9 +25,9 @@ public class ItemServiceTest {
     }
     public ItemDtoRequest addItem(){
         ItemDtoRequest request = new ItemDtoRequest();
-        request.setName("Bag");
-        request.setDescription("I want black and portable size");
-        request.setAmount(5000.00);
+        request.setName("Wig");
+        request.setDescription("I want black wig");
+        request.setAmount(500000.00);
         return  request;
     }
 
